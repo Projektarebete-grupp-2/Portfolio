@@ -1,3 +1,7 @@
+## Användning
+
+Kör först `npm install` sedan `npm start` för att starta.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
