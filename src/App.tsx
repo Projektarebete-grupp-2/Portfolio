@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import logo from './logo.svg';
+import logo from './drpepper.png';
 import Footer from './components/footer'
 import './App.css';
 

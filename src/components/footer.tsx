@@ -1,5 +1,5 @@
 import React, { CSSProperties, Fragment } from 'react';
-
+import SocialFollow from './socialmedia';
 
 const Footer = () =>{
     return(
@@ -14,16 +14,9 @@ const Footer = () =>{
                 <div>Göteborg</div>
             </div>
             <div style={rightFooter}>
-                <div style={socialmedia}>
-                    <a href="#">Instagram</a>
-                    <a href="#">Github</a>
-                    <a href="#">Snapchat</a>
-                </div>
+                <SocialFollow></SocialFollow>
                 <div style={pFooter}>
-                    <p style={marginFooter}>&copy;{new Date().getFullYear()} Företagets namn | </p>
-                    <p style={marginFooter}>All right reserved | </p>
-                    <p style={marginFooter}>Terms of Service | </p>
-                    <p style={marginFooter}>Privacy</p>
+                    <p >&copy;{new Date().getFullYear()} Företagets namn</p>
                </div>
             </div>
             </div>
@@ -34,13 +27,16 @@ const Footer = () =>{
 export default Footer
 
 
+
 const mainFooter: CSSProperties = {
     display: 'flex',
     flexDirection: 'row',
     width: '100vw',
     height: '15vh',
-    backgroundColor: '#282c34',
-    color: ' white',
+    backgroundColor: 'green',
+    /* backgroundColor: '#282c34', */
+    color: 'white',
+   
    
 }
 
@@ -48,31 +44,33 @@ const leftFooter: CSSProperties = {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
-    alignItems: 'center',
+    alignItems:  'center',
     width: '50%',
-    height: '50%',
-    margin: '1em'
+    height: '100%',
+    flex: '1',
    
   
 }
 const rightFooter: CSSProperties = {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
     alignItems: 'center',
+    flex: '1',
     width: '50%',
-    height: '50%',
-    margin: '1em'
+    height: '100%',
+   
+   
 }
 const socialmedia: CSSProperties = {
    display: 'flex',
    justifyContent: 'space-evenly',
-   width: '100%', 
+   width: '100%',
+   
+  
 }
 const pFooter: CSSProperties = {
    display: 'flex',
    flexDirection: 'row',
-}
-const marginFooter: CSSProperties = {
-    margin: '5px'
+  
 }
