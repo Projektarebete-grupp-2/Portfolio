@@ -17,7 +17,7 @@ a.social:hover {
   transform: translateY(-2px);
 }
 a.social {
-  margin: 0 1rem;
+  margin: 0 2rem;
   transition: transform 250ms;
   display: inline-block;
 }

@@ -9,13 +9,16 @@ const Footer = () =>{
         
             <div style={leftFooter}>
                 {/* missing navbar import */}
-                <div>Postgatan</div>
-                <div>411 06</div>
-                <div>Göteborg</div>
+                <div style={leftFooterDiv}>
+                    Postgatan 411 06 Göteborg</div>
+                    {/* Här kan menu bli importerad  istället för diven nedan. */}
+                <div style={leftFooterDiv}>
+                    Postgatan 411 06 Göteborg</div>
+              
             </div>
             <div style={rightFooter}>
                 <SocialFollow></SocialFollow>
-                <div style={pFooter}>
+                <div>
                     <p >&copy;{new Date().getFullYear()} Företagets namn</p>
                </div>
             </div>
@@ -33,8 +36,8 @@ const mainFooter: CSSProperties = {
     flexDirection: 'row',
     width: '100vw',
     height: '15vh',
-    backgroundColor: 'green',
-    /* backgroundColor: '#282c34', */
+    /* backgroundColor: 'green', */
+    backgroundColor: '#282c34',
     color: 'white',
    
    
@@ -42,14 +45,15 @@ const mainFooter: CSSProperties = {
 
 const leftFooter: CSSProperties = {
     display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
+    flexDirection: 'column',
+    justifyContent: 'center',
     alignItems:  'center',
     width: '50%',
     height: '100%',
-    flex: '1',
-   
-  
+    flex: '1', 
+}
+const leftFooterDiv: CSSProperties ={
+    margin: '0.5em',
 }
 const rightFooter: CSSProperties = {
     display: 'flex',
@@ -62,15 +66,4 @@ const rightFooter: CSSProperties = {
    
    
 }
-const socialmedia: CSSProperties = {
-   display: 'flex',
-   justifyContent: 'space-evenly',
-   width: '100%',
-   
-  
-}
-const pFooter: CSSProperties = {
-   display: 'flex',
-   flexDirection: 'row',
-  
-}
+
