@@ -1,0 +1,116 @@
+.left{
+	width: 300px;
+	display: flex;
+	margin: 0 auto;
+	margin-top: 1rem;
+}
+.aboutUs {
+	position: relative;
+	height: auto;
+	padding: 8rem 0;
+	padding-bottom: 10.5rem;
+	margin-bottom: 5rem;
+	display: inline-block;
+	width: 100%;
+	overflow: hidden;
+	background: #cc1111;
+	color:#d8e1e9;
+}
+
+.waveImage {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: #f8f9fa;
+	backface-visibility: hidden;
+	padding-bottom: -0rem;
+}
+
+.aboutResumeInfo {
+	margin: 0 10%;
+	color: #e0e0e0;
+}
+
+.container {
+	margin-bottom: 1.5rem;
+	
+}
+
+.title {
+	font-weight: 700;
+	margin-top: 1.5rem;
+	position: relative;
+	font-size: 1.8rem;
+	margin-bottom: 0.7rem;
+}
+
+.subtitle {
+	opacity: 0.8;
+	text-transform: uppercase;
+	font-size: 0.9rem;
+	 color: #c5d5ea
+}
+
+.infoText {
+	color: #ffffff;
+	font-weight: 400;
+	cursor: text;
+	user-select: normal;
+	transition: 0.15s ease-in;
+	text-align: justify;
+	padding-bottom: 3rem;
+	max-width: 600px;
+	line-height: 1.7;
+	text-align: left;
+	letter-spacing: 0.3px;
+}
+
+.waveDown {
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background: #f8f9fa;
+	backface-visibility: hidden;
+}
+
+a {
+	text-decoration: none;
+	font-family: 'Inter', sans-serif;
+	font-weight: 600;
+	background: #ecf2f8;
+	color: #2f3292;
+	border-radius: 10px;
+	transition: 0.15s ease-in;
+	padding: 0.8rem 1.2rem;
+	font-size: 1.1rem;
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.flying {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.thinkingImg {
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background: #ecf2f8;
+	backface-visibility: hidden;
+}
+
+
+
+
+
+/*

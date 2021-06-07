@@ -1,26 +1,28 @@
 import React from "react";
 import { teammembers } from "../data/data";
-import TeamCard from "./TeamCard";
-import "./Team.css";
+import TeamCard from "../components/Cards/TeamCard";
+import "../style/Team.css";
+import Grid from "@material-ui/core/Grid";
+
 
 
 
 
 function Team() {
   return (
-    <section className="section--exp" id="experience">
+    <Grid className="team">
       <div className="inner">
-        <div className="exp-title">
-          <p>{teammembers.title}</p>
-        </div>
+          <Grid item className="title">
+            <p>{teammembers.title}</p>
+          </Grid>
 
-        <div className="exp-cards">
-          {teammembers.lists.map((list, i) => {
-            return <TeamCard teammembers={list} key={i} />;
-          })}
-        </div>
+          <Grid item className="team-cards">
+            {teammembers.lists.map((list, i) => {
+              return <TeamCard teammembers={list} key={i} />;
+            })}
+          </Grid>
       </div>
-    </section>
+    </Grid>
   );
 }
 export default Team;
