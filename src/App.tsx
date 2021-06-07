@@ -10,6 +10,7 @@ import './App.css';
 function App() {
   return (
     <Fragment>
+      <Main />
         <ContactPage></ContactPage>
       <Footer></Footer>
     </Fragment>
