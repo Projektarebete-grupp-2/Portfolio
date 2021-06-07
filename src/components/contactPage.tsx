@@ -1,73 +1,50 @@
-import 'react-app-polyfill/ie11';
-import React from 'react';
-import './contactform.css';
 
-import { Formik, Field, Form, FormikHelpers } from 'formik';
+import React from 'react';
+import emailjs from 'emailjs-com';
+
 import { CSSProperties } from '@material-ui/styles';
 
-interface Values {
-    name: string;
-    email: string;
-    message: string;
-}
-
-const ContactPage = () => {
+ export default function ContactPage(){
+/* Kanske göra en klass utav detta? */
+  function sendEmail(e: any ) {
+    e.preventDefault();
+  
+    emailjs.sendForm('service_7mhxm8q', 'template_vj0p6rn', e.target, 'user_914CcAaQ8KuJjqqafaLS5')
+      .then((result) => {
+          console.log(result.text);
+          alert('Thanks for contacting us!')
+      }, (error) => {
+          console.log(error.text);
+      });
+      e.target.reset();
+      
+      
+  } 
   return (
     <div style={formDiv}>
-      <h1>Kontakt Formulär</h1>
-      <Formik
-        initialValues={{
-            name: '',
-            email: '',
-            message: '',
-        }}
-        onSubmit={(
-          values: Values,
-          { setSubmitting }: FormikHelpers<Values>
-        ) => {
-            /* Här ska det läggas till så att när du klickar på submit så skickas ett mail via api.... */
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 500);
-        }}
-      >
-        <div >
-            <Form style={mainForm}>
-            <label htmlFor="name">Namn</label>
-            <Field 
-                id="name" 
-                name="name" 
-                placeholder="John Doe" 
-                style={fieldDiv} 
-            />
-            <label htmlFor="email">Email</label>
-            <Field
-                id="email"
-                name="email"
-                placeholder="john@doe.com"
-                type="email"
-                style={fieldDiv}
-            />
-            <label htmlFor="message">Medelande</label>
-            <Field 
-                id="message" 
-                name="message"  
-                placeholder="Medelande" 
-                style={fieldMessage} 
-            />
-            <button 
-                type="submit"
-                style={fieldDiv}
-                >Skicka</button>
-            </Form>
-
-        </div>
-      </Formik>
+      <h1>Kontakta oss</h1>
+      
+        <form  onSubmit={sendEmail} style={mainForm}>
+          <div style={fieldDiv}>
+          <input type="subject" placeholder='Subject' name='subject'/>
+          </div>
+          <div style={fieldDiv}>
+            <input type="text" placeholder='Name' name='name'/>
+          </div>
+          <div style={fieldDiv}>
+          <input type="email" placeholder='Email' name='email'/>
+          </div>
+          <div >
+          <input type="message" placeholder='Message' name='message'/>
+          </div>
+          <div style={fieldBtn}>
+            <input type="submit" value='Send Message' />
+          </div>
+        </form>
     </div>
   );
 }
-export default ContactPage
+
 
 const formDiv: CSSProperties={
     display: 'flex',
@@ -86,8 +63,11 @@ const mainForm: CSSProperties={
 }
 const fieldDiv: CSSProperties={
     height: '5vh',
+   
 }
-const fieldMessage: CSSProperties={
-    height: '15vh',
+
+const fieldBtn: CSSProperties={
+    width: '5vw',
+    height: '5vh',
 }
 
