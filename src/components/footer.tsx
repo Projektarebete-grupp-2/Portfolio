@@ -37,7 +37,7 @@ const mainFooter: CSSProperties = {
     width: '100vw',
     height: '15vh',
     /* backgroundColor: 'green', */
-    backgroundColor: '#282c34',
+    
     color: 'white',
    
    

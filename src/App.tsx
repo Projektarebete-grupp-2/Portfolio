@@ -8,13 +8,11 @@ import SimplePortal from './components/portal';
 import './App.css';
 
 
+
 function App() {
   return (
     <Fragment>
       <Main />
-
-        <SimplePortal></SimplePortal>
-      <Footer></Footer>
     </Fragment>
   );
 
