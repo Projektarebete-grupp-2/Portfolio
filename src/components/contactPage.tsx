@@ -1,8 +1,8 @@
-
 import React from 'react';
 import emailjs from 'emailjs-com';
 
 import { CSSProperties } from '@material-ui/styles';
+import Button from '@material-ui/core/Button';
 
  export default function ContactPage(){
 /* Kanske göra en klass utav detta? */
@@ -22,23 +22,24 @@ import { CSSProperties } from '@material-ui/styles';
   } 
   return (
     <div style={formDiv}>
-      <h1>Kontakta oss</h1>
+      <h1>Contact us!</h1>
       
         <form  onSubmit={sendEmail} style={mainForm}>
-          <div style={fieldDiv}>
-          <input type="subject" placeholder='Subject' name='subject'/>
+          <div>
+            <textarea style={fieldDiv}  placeholder='Subject' name='subject'/>
           </div>
-          <div style={fieldDiv}>
-            <input type="text" placeholder='Name' name='name'/>
-          </div>
-          <div style={fieldDiv}>
-          <input type="email" placeholder='Email' name='email'/>
+          <div>
+            <textarea style={fieldDiv}  placeholder='Name' name='name'/>
           </div>
           <div >
-          <input type="message" placeholder='Message' name='message'/>
+            <textarea style={fieldDiv}  placeholder='Email' name='email'/>
           </div>
-          <div style={fieldBtn}>
-            <input type="submit" value='Send Message' />
+          <div > 
+            <textarea  style={fieldMessage}   placeholder='Message' name='message'/>
+          </div>
+          <div >
+          {/*   <Button style={fieldBtn} type="submit" > Send Message</Button> */}
+            <Button variant="outlined" type="submit"> Send Message</Button>
           </div>
         </form>
     </div>
@@ -58,16 +59,20 @@ const mainForm: CSSProperties={
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
+    alignItems: 'center',
     width: '20vw',
     height: '30vh',
 }
 const fieldDiv: CSSProperties={
-    height: '5vh',
-   
+    height: '5vh', 
+    resize: 'none',
+    borderRadius: '5px',
+}
+const fieldMessage: CSSProperties={
+    height: '5vh', 
+    borderRadius: '5px',
 }
 
-const fieldBtn: CSSProperties={
-    width: '5vw',
-    height: '5vh',
-}
+
+
 
