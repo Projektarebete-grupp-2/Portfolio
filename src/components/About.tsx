@@ -10,30 +10,30 @@ import Container from "@material-ui/core/Container";
 
 
 
+
 export default function AboutResume(): JSX.Element {
   return (
     <Container className="aboutUs">
       <img className="waveImage" src={waveAboutResume} alt="about" />
-      <Grid className="aboutResumeInfo">
-        <Grid className="container">
-          <Typography variant="h2" className="title">
-            About US
-          </Typography>
+      <Grid container spacing={3}>
 
-        </Grid>
-        <Grid className="infoText">
+        <Grid item xs={6}>
+          <Grid className="container">
+            <Typography variant="h2" className="title">
+              About US
+            </Typography>
+          </Grid>
+
           <Typography variant="subtitle2" className="title" gutterBottom>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum vitae,
             expedita at consequatur numquam assumenda officia. Dignissimos,
             reprehenderit magni obcaecati veniam atque tempore eos cupiditate
             soluta doloremque, quod alias quidem?
           </Typography>
-          <a href="/">
-            <i className="fas fa-cloud-download-alt" />
-            More about us
-          </a>
         </Grid>
-        <img src={aboutResumeIllustration} alt="" style={leftImage} />
+        <Grid item xs={6}>
+          <img src={aboutResumeIllustration} alt="" style={leftImage} />
+        </Grid>
       </Grid>
 
       <img className="waveDown" src={waveAboutResumeDown} alt="" />
