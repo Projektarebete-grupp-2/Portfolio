@@ -3,13 +3,20 @@ import HelloWorld from './HelloWorld'
 import Skills from './Skills';
 import Team from './Team'
 import  About  from "./About";
+import Projects from './Project';
+
+
+
 
 function Main() {
-  return <div className="root">
-    <HelloWorld />
-    <Team />
-    <Skills />
-    <About />
-    </div>;
+  return (
+    <div className="root">
+      <HelloWorld />
+      <Team />
+      <Skills />
+      <About />
+      <Projects />
+ </div>
+  );
 }
 export default Main;
