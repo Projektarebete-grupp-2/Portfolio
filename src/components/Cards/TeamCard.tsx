@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
 import "../../style/TeamCard.css";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
+import { Grid, Paper, ThemeProvider, useTheme } from "@material-ui/core";
 
 interface Props {
   teammembers: {
@@ -14,20 +15,23 @@ interface Props {
 }
 function TeamCard({ teammembers }: Props) {
   const Fade = require("react-reveal/Fade");
+  const theme = useTheme();
   return (
-    <Fade duration={800} bottom>
-      <div className="expcard-main">
-        <div className="inner">
-          <Card elevation={1}>
-            <CardHeader title={teammembers.name} />
-            <CardContent>
-              <Typography variant="h5">{teammembers.role}</Typography>
-              <Typography variant="body2">{teammembers.skills}</Typography>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-    </Fade>
+    <ThemeProvider theme={theme}>
+      <Paper>
+        <Fade duration={800} bottom>
+          <Grid className="expcard-main">
+            <Card elevation={1}>
+              <CardHeader title={teammembers.name} />
+              <CardContent>
+                <Typography variant="h5">{teammembers.role}</Typography>
+                <Typography variant="body2">{teammembers.skills}</Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+        </Fade>
+      </Paper>
+    </ThemeProvider>
   );
 }
 

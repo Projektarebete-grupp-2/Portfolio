@@ -3,6 +3,7 @@ import "../../style/SkillCard.css";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
+import { Grid, Paper, ThemeProvider, useTheme } from "@material-ui/core";
 
 interface Props {
   skill: {
@@ -12,15 +13,22 @@ interface Props {
 }
 
 function SkillCard({ skill }: Props) {
+  const theme = useTheme();
   return (
-      <Card className="skill-card-main">
-        <CardContent className="skill-icon">
-          <i className={skill.fontAwesome}></i>
-        </CardContent>
-        <CardContent className="skill-text">
-          <Typography variant="subtitle1">{skill.text}</Typography>
-        </CardContent>
-      </Card>
+    <ThemeProvider theme={theme}>
+      <Paper>
+        <Grid className="skill-card-main">
+          <Card elevation={1}>
+            <CardContent className="skill-icon">
+              <i className={skill.fontAwesome}></i>
+            </CardContent>
+            <CardContent className="skill-text">
+              <Typography variant="subtitle1">{skill.text}</Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+      </Paper>
+    </ThemeProvider>
   );
 }
 

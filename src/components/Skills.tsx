@@ -3,9 +3,13 @@ import "../style/skill.css";
 import { skills } from "../data/data";
 import SkillCard from "../components/Cards/SkillsCard";
 import Grid from "@material-ui/core/Grid";
+import { Paper, ThemeProvider, useTheme } from "@material-ui/core";
 
 function Skills() {
+  const theme = useTheme()
   return (
+    <ThemeProvider theme={theme}>
+    <Paper>
     <Grid className="skills">
       <div className="divWrapper">
           <div className="wrapper">
@@ -21,6 +25,8 @@ function Skills() {
           </div>
       </div>
     </Grid>
+    </Paper>
+    </ThemeProvider>
   );
 }
 export default Skills;

@@ -3,6 +3,7 @@ import Portal from '@material-ui/core/Portal';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import TransitionsModal from './modal'
 import Button from '@material-ui/core/Button';
+import { Paper, ThemeProvider, Typography, useTheme } from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -11,7 +12,7 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: theme.spacing(1),
       margin: theme.spacing(1, 0),
      
-      color: 'white',
+      
       display: 'flex',
       justifyContent: 'center',
     },
@@ -30,10 +31,12 @@ export default function SimplePortal() {
     setShow(!show);
   };
 
+  const theme = useTheme()
   return (
-    <div>
+    <ThemeProvider theme={theme}>
+    <Paper>
       <div className={classes.container}>
-        <h4>Contact us click the </h4> 
+      <Typography variant='h6'>Contact us click the </Typography> 
       <Button className={classes.buttonStyle} color='secondary' type="button" onClick={handleClick}>
         button
       </Button>
@@ -44,7 +47,8 @@ export default function SimplePortal() {
         ) : null}
       </div>
       <div className={classes.container} ref={container} />
-    </div>
+    </Paper>
+    </ThemeProvider>
   );
 }
 
