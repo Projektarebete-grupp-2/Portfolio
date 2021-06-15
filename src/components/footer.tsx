@@ -1,9 +1,12 @@
+import { Paper, ThemeProvider, useTheme } from '@material-ui/core';
 import React, { CSSProperties, Fragment } from 'react';
 import SocialFollow from './socialmedia';
 
 const Footer = () =>{
-    return(
-        <Fragment>
+    const theme = useTheme()
+  return (
+    <ThemeProvider theme={theme}>
+    <Paper>
             {/* main footer */}
         <div style={mainFooter}>
         
@@ -24,7 +27,8 @@ const Footer = () =>{
             </div>
             </div>
 
-        </Fragment>
+        </Paper>
+        </ThemeProvider>
     )
 }
 export default Footer
@@ -37,7 +41,7 @@ const mainFooter: CSSProperties = {
     width: '100vw',
     height: '15vh',
     /* backgroundColor: 'green', */
-    backgroundColor: '#282c34',
+    
     color: 'white',
    
    

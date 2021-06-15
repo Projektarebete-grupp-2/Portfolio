@@ -6,13 +6,17 @@ import React, { CSSProperties } from "react";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
+import { Paper, ThemeProvider, useTheme } from "@material-ui/core";
 
 
 
 
 
 export default function AboutResume(): JSX.Element {
+  const theme = useTheme()
   return (
+    <ThemeProvider theme={theme}>
+    <Paper>
     <Container className="aboutUs">
       <img className="waveImage" src={waveAboutResume} alt="about" />
       <Grid container spacing={3}>
@@ -38,6 +42,8 @@ export default function AboutResume(): JSX.Element {
 
       <img className="waveDown" src={waveAboutResumeDown} alt="" />
     </Container>
+    </Paper>
+    </ThemeProvider>
   );
 }
 const leftImage: CSSProperties = {
