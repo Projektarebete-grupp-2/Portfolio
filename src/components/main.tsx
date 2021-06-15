@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import HelloWorld from "./HelloWorld";
 import Skills from "./Skills";
@@ -6,22 +5,12 @@ import Team from "./Team";
 import About from "./About";
 import SimplePortal from "./portal";
 import Footer from "./footer";
-import {
-  createMuiTheme,
-  ThemeProvider,
-  useTheme,
-} from "@material-ui/core/styles";
-import {
-  Button,
-  Grid,
-  Paper,
-  Switch,
-  Typography,
-  useMediaQuery,
-} from "@material-ui/core";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { Grid, Paper, Switch } from "@material-ui/core";
 
 import WbSunnySharpIcon from "@material-ui/icons/WbSunnySharp";
 import Brightness3Icon from "@material-ui/icons/Brightness3";
+import ErrorBoundary from "./errorboundary";
 
 function Main() {
   function GetInitMode() {
@@ -81,11 +70,11 @@ function Main() {
           <Skills />
           <About />
           <SimplePortal></SimplePortal>
+
           <Footer></Footer>
         </Grid>
       </Paper>
     </ThemeProvider>
-
   );
 }
 export default Main;
