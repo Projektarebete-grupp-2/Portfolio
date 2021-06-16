@@ -1,12 +1,11 @@
-import React from 'react';
+import React from "react";
 import "../../style/ProjectCard.css";
 import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
 import CardContent from "@material-ui/core/CardContent";
 import CardHeader from "@material-ui/core/CardHeader";
 import Chip from "@material-ui/core/Chip";
-import { projects } from "../../data/data"
-
+import { projects } from "../../data/data";
 
 interface Props {
   project: {
@@ -19,28 +18,26 @@ interface Props {
   };
 }
 
-
 function ProjectCard({ project }: Props) {
-    const Fade = require('react-reveal/Fade');
-    return (
-      <Fade duration={800} bottom>
-        <a className="project-card-main" href={project.url}>
-          <Card className="card-title">
-            <CardHeader title={project.title} />
+  const Fade = require("react-reveal/Fade");
+  return (
+    <Fade duration={800} bottom>
+      <a className="project-card-main" href={project.url}>
+        <Card className="card-title">
+          <CardHeader title={project.title} />
 
-            <img src={project.img} alt={project.alt} />
+          <img src={project.img} alt={project.alt} />
 
-            <CardContent className="card-desc">
-              <Typography variant="body2" color="textSecondary" component="p">
-                {project.desc}
-              </Typography>
-              <Chip label={project.frameworks} color="secondary" />
-
-            </CardContent>
-          </Card>
-        </a>
-      </Fade>
-    );
+          <CardContent className="card-desc">
+            <Typography variant="body2" color="textSecondary" component="p">
+              {project.desc}
+            </Typography>
+            <Chip label={project.frameworks} color="secondary" />
+          </CardContent>
+        </Card>
+      </a>
+    </Fade>
+  );
 }
 
 export default ProjectCard;

@@ -1,68 +1,70 @@
-import React, { useState, useEffect, Fragment } from "react";
-
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import {
+  createMuiTheme,
   Button,
   Grid,
   Paper,
-  Switch,
-  Typography,
-  useMediaQuery,
+  Switch as Switcher,
+  ThemeProvider,
 } from "@material-ui/core";
-import { pink } from "@material-ui/core/colors";
-import { dark } from "@material-ui/core/styles/createPalette";
+import React, { useEffect, useState } from "react";
+import WbSunnySharpIcon from "@material-ui/icons/WbSunnySharp";
+import Brightness3Icon from "@material-ui/icons/Brightness3";
 
-export default function Theme() {
-  /*  function getInitMode(){
-        const savedMode = JSON.parse(localStorage.getItem('dark'));
-        getPrefColorsScheme();
-        return savedMode ;
-    }; */
-  function getPrefColorsScheme() {
-    if (
-      !useMediaQuery(
-        "prefers-color-scheme: dark" || "prefers-color-scheme: light"
-      )
-    )
-      return;
-    console.log(useMediaQuery("prefers-color-scheme: dark"));
+function Theme() {
+  function GetInitMode() {
+    const isReturningUser = "dark" in localStorage;
+    const savedMode = JSON.parse(localStorage.getItem("dark") || "{}");
+    const userPrefersDark = GetPrefColorsScheme();
+    if (isReturningUser) {
+      return savedMode;
+    } else if (userPrefersDark) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  function GetPrefColorsScheme() {
+    if (!window.matchMedia) return;
+
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
   }
 
-  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-  const [darkMode, setDarkMode] = useState(false);
-
+  const [darkMode, setDarkMode] = useState(GetInitMode());
   useEffect(() => {
     localStorage.setItem("dark", JSON.stringify(darkMode));
   }, [darkMode]);
 
-  const darkTheme = createMuiTheme({
+  const theme = createMuiTheme({
     palette: {
-      primary: {
-        main: "#115293",
-      },
+      type: darkMode ? "dark" : "light",
     },
   });
-  const lightTheme = createMuiTheme({
-    palette: {
-      primary: {
-        main: "#4791db",
-      },
-    },
-  });
-
+  console.log(theme.palette.type);
   return (
-    <Fragment>
-      <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-        <Paper className="root" style={{ height: "100vh" }}>
-          <Grid container direction="column">
-            <Typography variant="h4">Change Theme</Typography>
-            <Typography variant="h4">
-              {darkMode ? "darkTheme" : "lightTheme"}
-            </Typography>
-            {/* <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} color="default"></Switch> */}
-          </Grid>
-        </Paper>
+    <>
+      <ThemeProvider theme={theme}>
+        <Grid
+          style={{ padding: "20px" }}
+          container
+          direction="row"
+          justify="flex-end"
+        >
+          <WbSunnySharpIcon
+            style={{ color: darkMode ? "grey" : "yellow" }}
+          ></WbSunnySharpIcon>
+          <Switcher
+            style={{ transition: "0.5s ease-out" }}
+            checked={darkMode}
+            color="default"
+            onChange={() => setDarkMode((prevMode) => !prevMode)}
+          ></Switcher>
+          <Brightness3Icon
+            style={{ color: darkMode ? "slateblue" : "grey" }}
+          ></Brightness3Icon>
+        </Grid>
       </ThemeProvider>
-    </Fragment>
+    </>
   );
 }
+
+export default Theme;

@@ -3,24 +3,28 @@ import "./Project.css";
 import { projects } from "../data/data";
 import ProjectCard from "./Cards/ProjectCard";
 import Grid from "@material-ui/core/Grid";
-import { Container } from '@material-ui/core';
+import { Container, Paper, ThemeProvider, useTheme } from "@material-ui/core";
 
 function Project() {
+  const theme = useTheme();
   return (
-    <Grid className="section--project" id="project">
-      <Grid item className="inner">
-        <div className="project-title">
-          <p>{projects.title}</p>
-        </div>
+    <ThemeProvider theme={theme}>
+      <Paper>
+        <Grid className="section--project" id="project">
+          <Grid item className="inner">
+            <div className="project-title">
+              <p>{projects.title}</p>
+            </div>
 
-        <Grid item className="project-cards">
-          {projects.lists.map((list, i) => {
-            return <ProjectCard project={list} key={i} />;
-          })}
+            <Grid item className="project-cards">
+              {projects.lists.map((list, i) => {
+                return <ProjectCard project={list} key={i} />;
+              })}
+            </Grid>
+          </Grid>
         </Grid>
-      </Grid>
-    </Grid>
+      </Paper>
+    </ThemeProvider>
   );
 }
 export default Project;
-

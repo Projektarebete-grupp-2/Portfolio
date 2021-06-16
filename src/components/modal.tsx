@@ -11,6 +11,7 @@ import Fade from "@material-ui/core/Fade";
 import ContactPage from "./contactPage";
 import { Paper, useTheme } from "@material-ui/core";
 import ErrorBoundary from "./errorboundary";
+import { useRouteMatch } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -36,7 +37,9 @@ export default function TransitionsModal() {
   const handleClose = () => {
     setOpen(false);
   };
-
+  let { path, url } = useRouteMatch();
+  console.log(path);
+  console.log(url);
   const theme = useTheme();
   return (
     <ThemeProvider theme={theme}>
@@ -54,11 +57,7 @@ export default function TransitionsModal() {
           }}
         >
           <Fade in={open}>
-            <div className={classes.paper}>
-              <ErrorBoundary errorMsg="oj ojo oj de blev ett fel">
-                <ContactPage></ContactPage>
-              </ErrorBoundary>
-            </div>
+            <div className={classes.paper}></div>
           </Fade>
         </Modal>
       </Paper>
