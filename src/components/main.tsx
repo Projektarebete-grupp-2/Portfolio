@@ -4,6 +4,7 @@ import Skills from './Skills';
 import Team from './Team'
 import  About  from "./About";
 import Projects from './Project';
+import Header from './Header';
 
 
 
@@ -11,6 +12,7 @@ import Projects from './Project';
 function Main() {
   return (
     <div className="root">
+
       <HelloWorld />
       <Team />
       <Skills />
