@@ -4,9 +4,14 @@ import { projects } from "../data/data";
 import ProjectCard from "./Cards/ProjectCard";
 import Grid from "@material-ui/core/Grid";
 import { Container } from '@material-ui/core';
+import { Paper, ThemeProvider, useTheme } from "@material-ui/core";
 
-function Project() {
+function Project() {  
+  const theme = useTheme()
+
   return (
+        <ThemeProvider theme={theme}>
+    <Paper>
     <Grid className="section--project" id="project">
       <Grid item className="inner">
         <div className="project-title">
@@ -20,6 +25,8 @@ function Project() {
         </Grid>
       </Grid>
     </Grid>
+  </Paper>
+    </ThemeProvider>
   );
 }
 export default Project;

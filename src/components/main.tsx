@@ -1,15 +1,14 @@
-
 import React, { useEffect, useState } from "react";
 import HelloWorld from "./HelloWorld";
 import Skills from "./Skills";
 import Team from "./Team";
 import About from "./About";
+import Project from "./Project";
 import SimplePortal from "./portal";
 import Footer from "./footer";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { Grid, Paper, Switch } from "@material-ui/core";
-import Header from './Header';
-
+// import {Blog} from './Blog'
 
 import WbSunnySharpIcon from "@material-ui/icons/WbSunnySharp";
 import Brightness3Icon from "@material-ui/icons/Brightness3";
@@ -45,7 +44,7 @@ function Main() {
     },
   });
 
-
+  return (
     <ThemeProvider theme={theme}>
       <Paper style={{ height: "100vh" }}>
         <Grid container direction="column">
@@ -72,13 +71,13 @@ function Main() {
           <Team />
           <Skills />
           <About />
+          <Project />
           <SimplePortal></SimplePortal>
 
           <Footer></Footer>
         </Grid>
       </Paper>
     </ThemeProvider>
-
   );
 }
 export default Main;
