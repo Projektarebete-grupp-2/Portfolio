@@ -1,4 +1,4 @@
-:root{
+.root{
   --main-font:Space;
   --main-color:#FFF;
   --second-color:#000;
@@ -7,19 +7,26 @@
 }
 
 
+/*
+:root{
+  --main-font:Space;
+  --main-color:#000;
+  --second-color:#FFF;
+}
+*/
+
 *{
   margin:0;
   padding:0;
 }
 
-body {
+.body {
   margin: 0;
   font-family: Space, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background:var(--second-color);
 }
 
 
@@ -42,17 +49,17 @@ body::-webkit-scrollbar-thumb {
 @font-face {
   font-family: 'Space';
   font-weight: 400;
-  src: local('SpaceGrotesk'), url(./fonts/SpaceGrotesk/SpaceGrotesk-Regular.woff) format('woff');
+  src: local('SpaceGrotesk'), url(../../fonts/SpaceGrotesk/SpaceGrotesk-Regular.woff) format('woff');
 }
 @font-face {
   font-family: 'Space';
   font-weight: 500;
-  src: local('SpaceGrotesk'), url(./fonts/SpaceGrotesk/SpaceGrotesk-Medium.woff) format('woff');
+  src: local('SpaceGrotesk'), url(../../fonts/SpaceGrotesk/SpaceGrotesk-Medium.woff) format('woff');
 }
 @font-face {
   font-family: 'Space';
   font-weight: 700;
-  src: local('SpaceGrotesk'), url(./fonts/SpaceGrotesk/SpaceGrotesk-Bold.woff) format('woff');
+  src: local('SpaceGrotesk'), url(../../fonts/SpaceGrotesk/SpaceGrotesk-Bold.woff) format('woff');
 }
 
 a{
