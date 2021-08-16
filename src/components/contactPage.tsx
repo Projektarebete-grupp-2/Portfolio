@@ -33,8 +33,6 @@ export default function ContactPage(props: Props) {
 
   return (
     <div style={formDiv}>
-      <h1>Contact us!</h1>
-
       <form onSubmit={sendEmail} style={mainForm}>
         <div>
           <textarea style={fieldDiv} placeholder="Subject" name="subject" />
@@ -49,9 +47,7 @@ export default function ContactPage(props: Props) {
           <textarea style={fieldMessage} placeholder="Message" name="message" />
         </div>
         <div>
-          {/*   <Button style={fieldBtn} type="submit" > Send Message</Button> */}
-          <Button variant="outlined" type="submit">
-            {" "}
+          <Button variant="outlined" color="primary" type="submit">
             Send Message
           </Button>
         </div>
@@ -71,15 +67,17 @@ const mainForm: CSSProperties = {
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  width: "20vw",
-  height: "30vh",
+  width: "40vw",
+  height: "60vh",
 };
 const fieldDiv: CSSProperties = {
-  height: "5vh",
+  height: "10vh",
+  width: "20vw",
   resize: "none",
   borderRadius: "5px",
 };
 const fieldMessage: CSSProperties = {
-  height: "5vh",
+  height: "10vh",
+  width: "20vw",
   borderRadius: "5px",
 };
