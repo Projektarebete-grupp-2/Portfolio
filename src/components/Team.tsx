@@ -1,6 +1,6 @@
 import React from "react";
 import { teammembers } from "../data/data";
-import TeamCard from "../components/Cards/TeamCard";
+import TeamCard from "./TeamCard";
 import "../style/Team.css";
 import Grid from "@material-ui/core/Grid";
 import { Paper, ThemeProvider, useTheme } from "@material-ui/core";
