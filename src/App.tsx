@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Fragment } from "react";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { Button, Grid, Paper, Switch as Switcher } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import WbSunnySharpIcon from "@material-ui/icons/WbSunnySharp";
 import Brightness3Icon from "@material-ui/icons/Brightness3";
+
 
 import HelloWorld from "./components/HelloWorld";
 import Skills from "./components/Skills";
@@ -16,6 +17,14 @@ import Nav from "./components/nav";
 import ContactPage from "./components/contactPage";
 import Main from "./components/main";
 import Project from "./components/Project";
+import Main from './components/main'
+
+import Blogpage from "./components/Blogpage";
+import Article from './components/Article';
+
+import Portfolio from "./components/Upcoming";
+import Work from "./components/Work";
+import BlogWrapper from "./components/BlogWrapper";
 
 function App() {
   function GetInitMode() {
@@ -33,6 +42,7 @@ function App() {
   function GetPrefColorsScheme() {
     if (!window.matchMedia) return;
 
+
     return window.matchMedia("(prefers-color-scheme: dark)").matches;
   }
 
@@ -47,6 +57,7 @@ function App() {
     },
   });
   const ThemeContext = React.createContext(theme.palette.type);
+
 
   return (
     <Router>
@@ -76,6 +87,7 @@ function App() {
             <Switch>
               <Route path="/" exact component={Main}></Route>
 
+
               <Route path="/Team" exact component={Team}>
                 <Team />
               </Route>
@@ -93,6 +105,11 @@ function App() {
               <Route path="/Project" exact component={Project}>
                 <Project></Project>
               </Route>
+              <Route path="/blog" exact component={BlogWrapper} />
+          <Route path="/blog/:id" component={Article} />
+          <Route path="/contact" component={ContactPage} />
+          <Route component={Portfolio} path="/portfolio" exact />
+          <Route component={Work} path="/portfolio/:id" exact />
             </Switch>
             <Footer></Footer>
           </Grid>

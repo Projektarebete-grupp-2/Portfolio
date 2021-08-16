@@ -1,8 +1,9 @@
 import React from "react";
-import "./Project.css";
+import "../style/Project.css";
 import { projects } from "../data/data";
-import ProjectCard from "./Cards/ProjectCard";
+import ProjectCard from "./ProjectCard";
 import Grid from "@material-ui/core/Grid";
+
 import { Container, Paper, ThemeProvider, useTheme } from "@material-ui/core";
 
 function Project() {
@@ -16,6 +17,7 @@ function Project() {
               <p>{projects.title}</p>
             </div>
 
+
             <Grid item className="project-cards">
               {projects.lists.map((list, i) => {
                 return <ProjectCard project={list} key={i} />;
@@ -23,7 +25,9 @@ function Project() {
             </Grid>
           </Grid>
         </Grid>
+
       </Paper>
+
     </ThemeProvider>
   );
 }

@@ -1,0 +1,31 @@
+.article{
+    width:100%;
+    justify-content: center;
+    display: flex;
+    align-items: flex-start;
+   border-radius: 10px;
+    position: relative;
+    margin: 20px;
+}
+
+.container{
+    max-width: 1000px;
+    display: block;
+    padding:10px 20px;
+    flex-direction: column;
+    
+    
+}
+@media screen and (max-width:768px){
+    .article{
+        display: block;
+    }
+    .ontainer{
+        width:auto
+    }
+}
+.hero{
+    text-align: left;
+    margin-top:100px;
+    width:90%;
+}
