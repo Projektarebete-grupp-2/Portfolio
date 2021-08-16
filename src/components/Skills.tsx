@@ -1,7 +1,7 @@
 import React from "react";
 import "../style/skill.css";
 import { skills } from "../data/data";
-import SkillCard from "../components/Cards/SkillsCard";
+import SkillCard from "../components/SkillsCard";
 import Grid from "@material-ui/core/Grid";
 import { Paper, ThemeProvider, useTheme } from "@material-ui/core";
 

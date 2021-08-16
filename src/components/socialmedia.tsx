@@ -4,7 +4,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import SvgIcon, { SvgIconProps } from '@material-ui/core/SvgIcon';
-import './socialmedia.css';
+import '../style/socialmedia.css';
 import { Grid, Link, Paper, ThemeProvider, useTheme } from "@material-ui/core";
 
 

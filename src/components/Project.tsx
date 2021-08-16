@@ -1,9 +1,8 @@
 import React from "react";
-import "./Project.css";
+import "../style/Project.css";
 import { projects } from "../data/data";
-import ProjectCard from "./Cards/ProjectCard";
+import ProjectCard from "./ProjectCard";
 import Grid from "@material-ui/core/Grid";
-import { Container } from '@material-ui/core';
 import { Paper, ThemeProvider, useTheme } from "@material-ui/core";
 
 function Project() {  
