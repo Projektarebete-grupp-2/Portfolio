@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { Button, Grid, Paper, Switch as Switcher } from "@material-ui/core";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import WbSunnySharpIcon from "@material-ui/icons/WbSunnySharp";
+import Brightness3Icon from "@material-ui/icons/Brightness3";
+
 import HelloWorld from "./components/HelloWorld";
 import Skills from "./components/Skills";
 import Team from "./components/Team";
 import About from "./components/About";
 import SimplePortal from "./components/portal";
 import Footer from "./components/footer";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import { Button, Grid, Paper, Switch as Switcher } from "@material-ui/core";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import WbSunnySharpIcon from "@material-ui/icons/WbSunnySharp";
-import Brightness3Icon from "@material-ui/icons/Brightness3";
 import ErrorBoundary from "./components/errorboundary";
-
 import Nav from "./components/nav";
 import ContactPage from "./components/contactPage";
 import Main from "./components/main";
@@ -46,6 +46,7 @@ function App() {
       type: darkMode ? "dark" : "light",
     },
   });
+  const ThemeContext = React.createContext(theme.palette.type);
 
   return (
     <Router>
@@ -85,7 +86,7 @@ function App() {
                 <About></About>
               </Route>
               <Route path="/ContactPage" exact component={ContactPage}>
-                <ErrorBoundary errorMsg="oj ojo oj de blev ett fel">
+                <ErrorBoundary errorMsg="whoopsie daisy, something went wrong with the contact form...">
                   <ContactPage></ContactPage>
                 </ErrorBoundary>
               </Route>

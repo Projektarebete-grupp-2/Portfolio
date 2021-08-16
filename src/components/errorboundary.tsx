@@ -1,4 +1,10 @@
+import { Button } from "@material-ui/core";
 import React, { Component } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Main from "./main";
+import { CSSProperties } from "@material-ui/styles";
+import Typical from "react-typical";
+import Typography from "@material-ui/core/Typography";
 
 interface Props {
   errorMsg: String;
@@ -20,17 +26,31 @@ export default class ErrorBoundary extends Component<Props, State> {
   reloadPage = () => {
     window.URL = window.URL;
   };
-  /* här ska vi lägga in React router grejs istället för knapp med reload */
+
   render() {
     if (this.state.hasError) {
       return (
         <div>
-          <h1>{this.props.errorMsg}</h1>
-          <b>
-            <a href="" onClick={this.reloadPage}>
-              Reload
-            </a>
-          </b>
+          <Typography style={errormsgstyle} variant="h4">
+            &nbsp;
+            <Typical
+              loop={Infinity}
+              wrapper="b"
+              steps={[
+                "error.",
+                1000,
+                "error..",
+                1000,
+                "error...",
+                1000,
+                "error....",
+                1000,
+              ]}
+            />
+            {this.props.errorMsg}
+          </Typography>
+
+          <Route path="" exact component={Main}></Route>
         </div>
       );
     }
@@ -38,3 +58,9 @@ export default class ErrorBoundary extends Component<Props, State> {
     return this.props.children;
   }
 }
+const errormsgstyle: CSSProperties = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  color: "#282c34",
+};
