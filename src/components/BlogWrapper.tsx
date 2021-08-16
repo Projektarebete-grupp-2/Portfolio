@@ -1,22 +1,13 @@
 import React, { useEffect, useState } from "react";
-import HelloWorld from "./HelloWorld";
-import Skills from "./Skills";
-import Team from "./Team";
-import About from "./About";
-import Project from "./Project";
-import SimplePortal from "./portal";
-import Footer from "./footer";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { Grid, Paper, Switch } from "@material-ui/core";
-import Portfolio from './Upcoming'
-// import {Blog} from './Blog'
-
 import WbSunnySharpIcon from "@material-ui/icons/WbSunnySharp";
 import Brightness3Icon from "@material-ui/icons/Brightness3";
-import ErrorBoundary from "./errorboundary";
+import Blogpage from "./Blogpage"
+interface Props {}
 
 
-function Main() {
+const BlogWrapper = (props: Props)=> {
   function GetInitMode() {
     const isReturningUser = "dark" in localStorage;
     const savedMode = JSON.parse(localStorage.getItem("dark") || "{}");
@@ -69,20 +60,10 @@ function Main() {
               style={{ color: darkMode ? "slateblue" : "grey" }}
             ></Brightness3Icon>
           </Grid>
-          <HelloWorld />
-          <Team />
-          <Skills />
-          <About />
-          <Project />
-          <SimplePortal></SimplePortal>
-          {/* <Accordion data={data} openAll={true} /> */}
-          {/* <FAQList /> */}
-          <Portfolio/>
-
-          <Footer></Footer>
         </Grid>
+<Blogpage/>
       </Paper>
     </ThemeProvider>
   );
 }
-export default Main;
+export default BlogWrapper;

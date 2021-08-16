@@ -1,10 +1,8 @@
 .expcard-main {
   border-radius: 10px;
-  box-shadow: 13px 13px 6px rgba(0, 0, 0, 0.2);
   padding: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   background-color: #212223;
-
   font-size: 25px;
   text-align: center;
   transition: 0.3s ease-out;

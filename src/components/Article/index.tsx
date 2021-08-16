@@ -1,20 +1,15 @@
-import React , {useState, useEffect} from 'react';
-
+import "./style.css";
+import React, { useState, useEffect } from "react";
 import Post from '../Post'
 import {api} from '../../api'
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import { Paper, ThemeProvider, useTheme } from "@material-ui/core";
-import "./style.css";
+import AppBar from "@material-ui/core/AppBar";
 
 
-interface Post {
-  id: number;
-  title: string;
-  excerpt: string;
-  date: string;
- 
-}
+
+
 
 interface PostProps {
   id: number;
@@ -27,6 +22,8 @@ interface PostProps {
     rendered: string;
   };
 }
+
+
 
 const Article = ({ match }) => {
   const theme = useTheme();
@@ -43,9 +40,11 @@ const Article = ({ match }) => {
     return (
       <ThemeProvider theme={theme}>
         <Paper>
-          <Container fixed>
-            <Grid className="article__container">
-              <Grid item xs={12} className="article__hero">
+          <AppBar position="absolute" />
+          <Container maxWidth="lg">
+            <br />
+            <Grid className="container">
+              <Grid item xs={12} className="hero">
                 {article.title !== undefined && (
                   <Post
                     key={article.id}

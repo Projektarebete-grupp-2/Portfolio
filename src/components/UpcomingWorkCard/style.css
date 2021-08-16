@@ -1,0 +1,73 @@
+.Card-Post{
+    width:50%;   
+    animation: fadeup .6s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.Card-Post:hover{
+    opacity:.7;
+}
+
+@media screen and (max-width:768px){
+    .Card-Post{
+        width:100%;       
+   }
+}
+
+.Card-Container{  
+     display: block;
+    border-radius: 10px;
+    box-shadow: 13px 13px 6px rgba(0,0,0,0.2);
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: #212223;
+    color: #f1f2f3;
+    font-size: 25px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s ease-out;
+}
+.Card-Container:hover{
+    filter:drop-shadow( 0 20px 40px rgba(0,0,0,.06))
+}
+.Card-Wrapper{
+    position: relative;
+}
+
+.Card-Title{
+    font-size:25px;
+    color:white;
+    text-align:left;
+    display: inline;
+    margin-right: 20px;
+    
+}
+.Card-Date{
+    
+    color:white;
+    font-weight: 500;
+    opacity:.5;
+    font-size:14px;
+    transform: translateY(5px);
+    
+    position: absolute;
+}
+@media screen and (max-width:768px){
+    .Card-Date{
+        position: relative;
+        display: block;
+        line-height: 1.2;
+        font-size:inherit;
+
+    }
+}
+
+.Card-Excerpt{
+    font-size:17px;
+    line-height: 1.4;
+    color:white;
+    opacity: .8;
+    padding:15px 0 15px 0;
+    
+}
