@@ -1,9 +1,13 @@
 import { Button } from "@material-ui/core";
-import React from "react";
+import React, { CSSProperties, useState } from "react";
 import { Link } from "react-router-dom";
-function Nav() {
+import Modal from "./modal";
+import ModalContent from "./modalContent";
+
+const Nav: React.FC = () => {
+  const [modalOpen, setModalOpen] = useState(false);
   return (
-    <div>
+    <div style={navdiv}>
       <Link to="/">
         <Button>Home</Button>
       </Link>
@@ -16,14 +20,23 @@ function Nav() {
       <Link to="/About">
         <Button>About</Button>
       </Link>
-      <Link to="/ContactPage">
-        <Button>Contact us</Button>
-      </Link>
       <Link to="/Project">
         <Button>Project</Button>
       </Link>
+
+      <Modal modalOpen={modalOpen}>
+        <ModalContent setModalOpen={setModalOpen} />
+      </Modal>
+      <Button onClick={() => setModalOpen(true)}>
+        <span>Contact us!</span>
+      </Button>
     </div>
   );
-}
-
+};
+const navdiv: CSSProperties = {
+  display: "flex",
+  flexDirection: "row",
+  alignItems: "center",
+  /*  backgroundColor: '#282c34', */
+};
 export default Nav;

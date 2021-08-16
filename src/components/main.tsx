@@ -4,7 +4,7 @@ import Skills from "./Skills";
 import Team from "./Team";
 import About from "./About";
 import Project from "./Project";
-import SimplePortal from "./portal";
+
 import Footer from "./footer";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { Grid, Paper, Switch } from "@material-ui/core";
@@ -30,7 +30,6 @@ function Main() {
         <Skills />
         <About />
         <Project />
-        <SimplePortal></SimplePortal>
 
         {/* <Accordion data={data} openAll={true} /> */}
         {/* <FAQList /> */}

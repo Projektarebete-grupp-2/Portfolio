@@ -9,7 +9,7 @@ import HelloWorld from "./components/HelloWorld";
 import Skills from "./components/Skills";
 import Team from "./components/Team";
 import About from "./components/About";
-import SimplePortal from "./components/portal";
+
 import Footer from "./components/footer";
 import ErrorBoundary from "./components/errorboundary";
 import Nav from "./components/nav";

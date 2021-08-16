@@ -5,7 +5,6 @@ import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import { Grid, Paper, ThemeProvider, useTheme } from "@material-ui/core";
-import SimplePortal from "./portal";
 
 interface Props {
   teammembers: {
@@ -27,7 +26,6 @@ function TeamCard({ teammembers }: Props) {
               <CardContent>
                 <Typography variant="h5">{teammembers.role}</Typography>
                 <Typography variant="body2">{teammembers.skills}</Typography>
-                <SimplePortal></SimplePortal>
               </CardContent>
             </Card>
           </Grid>
