@@ -31,6 +31,7 @@ function Main() {
         <About />
         <Project />
         <SimplePortal></SimplePortal>
+
         {/* <Accordion data={data} openAll={true} /> */}
         {/* <FAQList /> */}
         <Portfolio />

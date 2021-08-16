@@ -106,7 +106,6 @@ function App() {
               <Route component={Portfolio} path="/portfolio" exact />
               <Route component={Work} path="/portfolio/:id" exact />
             </Switch>
-            <Footer></Footer>
           </Grid>
         </Paper>
       </ThemeProvider>
