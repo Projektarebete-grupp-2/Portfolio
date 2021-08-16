@@ -6,43 +6,77 @@ import React, { CSSProperties } from "react";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
-import { Paper, ThemeProvider, useTheme } from "@material-ui/core";
-
-
-
-
+import { Button, Paper, ThemeProvider, useTheme } from "@material-ui/core";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams,
+  useRouteMatch,
+} from "react-router-dom";
 
 export default function AboutResume(): JSX.Element {
-  const theme = useTheme()
+  let { path, url } = useRouteMatch();
+
+  const theme = useTheme();
   return (
     <ThemeProvider theme={theme}>
-    <Paper>
-    <Container className="aboutUs">
-      <img className="waveImage" src={waveAboutResume} alt="about" />
-      <Grid container spacing={3}>
-
-        <Grid item xs={6}>
-          <Grid className="container">
-            <Typography variant="h2" className="title">
-              About US
-            </Typography>
+      <Paper style={{ height: "100vh" }}>
+        <Container className="aboutUs">
+          <img className="waveImage" src={waveAboutResume} alt="about" />
+          <Grid container spacing={3}>
+            <Grid item xs={6}>
+              <Grid className="container">
+                <Typography variant="h2" className="title">
+                  About us
+                </Typography>
+              </Grid>
+              {/* Content */}
+              <Switch>
+                <Route exact path="/">
+                  <Typography
+                    variant="subtitle2"
+                    className="title"
+                    gutterBottom
+                  >
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Illo, ducimus quibusdam. Dolorum omnis, id magni nulla
+                    recusandae deleniti, cupiditate quas doloremque labore
+                    temporibus neque ex animi totam nesciunt distinctio aperiam.
+                    <Link style={{ color: "white" }} to="About/Detail">
+                      More Info
+                    </Link>
+                  </Typography>
+                </Route>
+                <Route path="/About/Detail">
+                  <h1>More detail page</h1>
+                </Route>
+                <Route path="/About">
+                  <Typography
+                    variant="subtitle2"
+                    className="title"
+                    gutterBottom
+                  >
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Illo, ducimus quibusdam. Dolorum omnis, id magni nulla
+                    recusandae deleniti, cupiditate quas doloremque labore
+                    temporibus neque ex animi totam nesciunt distinctio aperiam.
+                    <Link style={{ color: "white" }} to={`${url}/Detail`}>
+                      More Info
+                    </Link>
+                  </Typography>
+                </Route>
+              </Switch>
+              {/* Content */}
+            </Grid>
+            <Grid item xs={6}>
+              <img src={aboutResumeIllustration} alt="" style={leftImage} />
+            </Grid>
           </Grid>
-
-          <Typography variant="subtitle2" className="title" gutterBottom>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum vitae,
-            expedita at consequatur numquam assumenda officia. Dignissimos,
-            reprehenderit magni obcaecati veniam atque tempore eos cupiditate
-            soluta doloremque, quod alias quidem?
-          </Typography>
-        </Grid>
-        <Grid item xs={6}>
-          <img src={aboutResumeIllustration} alt="" style={leftImage} />
-        </Grid>
-      </Grid>
-
-      <img className="waveDown" src={waveAboutResumeDown} alt="" />
-    </Container>
-    </Paper>
+          <img className="waveDown" src={waveAboutResumeDown} alt="" />
+        </Container>
+      </Paper>
     </ThemeProvider>
   );
 }

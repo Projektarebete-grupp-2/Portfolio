@@ -1,33 +1,121 @@
+import React, { useEffect, useState, Fragment } from "react";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { Button, Grid, Paper, Switch as Switcher } from "@material-ui/core";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import WbSunnySharpIcon from "@material-ui/icons/WbSunnySharp";
+import Brightness3Icon from "@material-ui/icons/Brightness3";
 
-import React, { Fragment } from 'react';
+
+import HelloWorld from "./components/HelloWorld";
+import Skills from "./components/Skills";
+import Team from "./components/Team";
+import About from "./components/About";
+import SimplePortal from "./components/portal";
+import Footer from "./components/footer";
+import ErrorBoundary from "./components/errorboundary";
+import Nav from "./components/nav";
+import ContactPage from "./components/contactPage";
+import Main from "./components/main";
+import Project from "./components/Project";
 import Main from './components/main'
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 import Blogpage from "./components/Blogpage";
 import Article from './components/Article';
-import ContactPage from './components/contactPage'
+
 import Portfolio from "./components/Upcoming";
 import Work from "./components/Work";
 import BlogWrapper from "./components/BlogWrapper";
 
-
-
 function App() {
+  function GetInitMode() {
+    const isReturningUser = "dark" in localStorage;
+    const savedMode = JSON.parse(localStorage.getItem("dark") || "{}");
+    const userPrefersDark = GetPrefColorsScheme();
+    if (isReturningUser) {
+      return savedMode;
+    } else if (userPrefersDark) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  function GetPrefColorsScheme() {
+    if (!window.matchMedia) return;
+
+
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  }
+
+  const [darkMode, setDarkMode] = useState(GetInitMode());
+  useEffect(() => {
+    localStorage.setItem("dark", JSON.stringify(darkMode));
+  }, [darkMode]);
+
+  const theme = createMuiTheme({
+    palette: {
+      type: darkMode ? "dark" : "light",
+    },
+  });
+  const ThemeContext = React.createContext(theme.palette.type);
+
 
   return (
-    <Fragment>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/" exact component={Main} />
-          <Route path="/blog" exact component={BlogWrapper} />
+    <Router>
+      <ThemeProvider theme={theme}>
+        <Paper>
+          <Grid container direction="column">
+            <Grid
+              style={{ padding: "20px" }}
+              container
+              direction="row"
+              justify="flex-end"
+            >
+              <WbSunnySharpIcon
+                style={{ color: darkMode ? "grey" : "yellow" }}
+              ></WbSunnySharpIcon>
+              <Switcher
+                style={{ transition: "0.5s ease-out" }}
+                checked={darkMode}
+                color="default"
+                onChange={() => setDarkMode((prevMode) => !prevMode)}
+              ></Switcher>
+              <Brightness3Icon
+                style={{ color: darkMode ? "slateblue" : "grey" }}
+              ></Brightness3Icon>
+            </Grid>
+            <Nav />
+            <Switch>
+              <Route path="/" exact component={Main}></Route>
+
+
+              <Route path="/Team" exact component={Team}>
+                <Team />
+              </Route>
+              <Route path="/Skills" exact component={Skills}>
+                <Skills />
+              </Route>
+              <Route path="/About" component={About}>
+                <About></About>
+              </Route>
+              <Route path="/ContactPage" exact component={ContactPage}>
+                <ErrorBoundary errorMsg="whoopsie daisy, something went wrong with the contact form...">
+                  <ContactPage></ContactPage>
+                </ErrorBoundary>
+              </Route>
+              <Route path="/Project" exact component={Project}>
+                <Project></Project>
+              </Route>
+              <Route path="/blog" exact component={BlogWrapper} />
           <Route path="/blog/:id" component={Article} />
           <Route path="/contact" component={ContactPage} />
           <Route component={Portfolio} path="/portfolio" exact />
           <Route component={Work} path="/portfolio/:id" exact />
-        </Switch>
-      </BrowserRouter>
-    </Fragment>
+            </Switch>
+            <Footer></Footer>
+          </Grid>
+        </Paper>
+      </ThemeProvider>
+    </Router>
   );
-
 }
-
 export default App;
