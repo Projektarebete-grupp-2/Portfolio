@@ -1,0 +1,24 @@
+
+
+.questionButton {
+ border: none;
+ border-bottom: 3px solid rgb(24, 24, 24);
+ font-size: clamp(1rem, 1.7vw, 1rem);
+ color: #fff;
+ width: 100%;
+ outline: none;
+ background: transparent;
+ padding: 1rem;
+ margin-bottom: 1rem;
+ text-align: left;
+ font-weight: bold;
+ display: flex;
+ justify-content: space-between;
+}
+ /* div {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ } */
+
+

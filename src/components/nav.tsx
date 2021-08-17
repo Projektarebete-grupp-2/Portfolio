@@ -24,6 +24,10 @@ const Nav: React.FC = () => {
         <Button>Project</Button>
       </Link>
 
+      <Link to="/faq">
+        <Button>FAQ</Button>
+      </Link>
+
       <Modal modalOpen={modalOpen}>
         <ModalContent setModalOpen={setModalOpen} />
       </Modal>

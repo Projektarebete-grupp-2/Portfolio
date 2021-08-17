@@ -1,0 +1,32 @@
+
+
+.main{
+   width: 65vw;
+    margin: 0;
+    padding: 0;
+    font-family: 'Merriweather', serif;   
+}
+
+
+.NotFoundCard {
+   color: #fff;
+   display: flex;
+   align-items: center;
+   justify-content: center; 
+   flex-direction: column;
+   border-radius: 5px; 
+   border: 2px solid #2d2d2d96;
+   text-align: center; 
+   padding: 1rem 2rem; 
+   background: #010101
+}
+
+
+ .icon {
+      margin: 1rem;
+      padding: 1rem 1.2rem;
+      color:  '#fff';
+      font-size: 1.4rem;
+      border-radius: 50%;
+      background-color: '#fff';
+   }

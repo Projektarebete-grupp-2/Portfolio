@@ -22,7 +22,8 @@ import Article from "./components/Article";
 
 import Portfolio from "./components/Upcoming";
 import Work from "./components/Work";
-import BlogWrapper from "./components/BlogWrapper";
+import QuestionWrapper from "./components/QuestionsWrapper";
+
 
 function App() {
   function GetInitMode() {
@@ -100,11 +101,12 @@ function App() {
               <Route path="/Project" exact component={Project}>
                 <Project></Project>
               </Route>
-              <Route path="/blog" exact component={BlogWrapper} />
+              <Route path="/blog" exact component={Blogpage} />
               <Route path="/blog/:id" component={Article} />
               <Route path="/contact" component={ContactPage} />
               <Route component={Portfolio} path="/portfolio" exact />
               <Route component={Work} path="/portfolio/:id" exact />
+              <Route path="/faq" exact component={QuestionWrapper} />
             </Switch>
           </Grid>
         </Paper>
