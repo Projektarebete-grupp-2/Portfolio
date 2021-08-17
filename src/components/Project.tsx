@@ -11,9 +11,9 @@ function Project() {
   return (
     <ThemeProvider theme={theme}>
       <Paper>
-        <Grid className="section--project" id="project">
+        <Grid className="project" id="project">
           <Grid item className="inner">
-            <div className="project-title">
+            <div className="title">
               <p>{projects.title}</p>
             </div>
 

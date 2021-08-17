@@ -81,7 +81,7 @@ export default function AboutResume(): JSX.Element {
   );
 }
 const leftImage: CSSProperties = {
-  width: "300px",
+  width: "150px",
   display: "flex",
   margin: "0 auto",
   marginTop: "1 rem",

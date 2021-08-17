@@ -1,4 +1,4 @@
-import { Button } from "@material-ui/core";
+import { AppBar, Button } from "@material-ui/core";
 import React, { CSSProperties, useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "./modal";
@@ -7,6 +7,8 @@ import ModalContent from "./modalContent";
 const Nav: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
   return (
+              
+
     <div style={navdiv}>
       <Link to="/">
         <Button>Home</Button>

@@ -81,9 +81,7 @@ function App() {
               ></Brightness3Icon>
             </Grid>
             <Nav />
-            <ErrorBoundary errorMsg="whoopsie daisy, something went wrong with the blog page...">
-              <Blogpage></Blogpage>
-            </ErrorBoundary>
+
             <Switch>
               <Route path="/" exact component={Main}></Route>
 
@@ -104,7 +102,11 @@ function App() {
               <Route path="/Project" exact component={Project}>
                 <Project></Project>
               </Route>
-              <Route path="/blog" exact component={Blogpage} />
+              <Route path="/blog" exact component={Blogpage}>
+                <ErrorBoundary errorMsg="whoopsie daisy, something went wrong with the blog page...">
+                  <Blogpage></Blogpage>
+                </ErrorBoundary>
+              </Route>
 
               <Route path="/blog/:id" component={Article} />
               <Route path="/contact" component={ContactPage} />

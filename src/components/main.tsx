@@ -16,7 +16,7 @@ import ErrorBoundary from "./errorboundary";
 
 function Main() {
   return (
-    <Paper style={{ height: "100vh" }}>
+    <Paper>
       <Grid container direction="column">
         <Grid
           style={{ padding: "20px" }}
@@ -30,9 +30,15 @@ function Main() {
         <About />
         <Project />
         <ErrorBoundary errorMsg="Oops something went wrong">
-        <Portfolio/>
+          <Portfolio />
         </ErrorBoundary>
         <Footer></Footer>
+        {/* 
+        
+        
+      
+         */}
+        {/*  */}
       </Grid>
     </Paper>
   );

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AccordionContext } from "./AccordionContext";
-
+ 
 
 
 interface IAccordionContextValue {
