@@ -20,8 +20,8 @@ const Nav: React.FC = () => {
       <Link to="/About">
         <Button>About</Button>
       </Link>
-      <Link to="/Project">
-        <Button>Project</Button>
+      <Link to="/Blog">
+        <Button>Blog</Button>
       </Link>
 
       <Link to="/faq">

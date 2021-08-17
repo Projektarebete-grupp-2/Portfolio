@@ -29,7 +29,9 @@ function Main() {
         <Skills />
         <About />
         <Project />
-        <Portfolio />
+        <ErrorBoundary errorMsg="Oops something went wrong">
+        <Portfolio/>
+        </ErrorBoundary>
         <Footer></Footer>
       </Grid>
     </Paper>
