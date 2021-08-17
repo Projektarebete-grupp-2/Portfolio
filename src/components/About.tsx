@@ -35,18 +35,12 @@ export default function AboutResume(): JSX.Element {
               {/* Content */}
               <Switch>
                 <Route exact path="/">
-                  <Typography
-                    variant="subtitle2"
-                    className="title"
-                    gutterBottom
-                  >
+                  <Typography>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Illo, ducimus quibusdam. Dolorum omnis, id magni nulla
                     recusandae deleniti, cupiditate quas doloremque labore
                     temporibus neque ex animi totam nesciunt distinctio aperiam.
-                    <Link style={{ color: "white" }} to="About/Detail">
-                      More Info
-                    </Link>
+                    <Link to="About/Detail">More Info</Link>
                   </Typography>
                 </Route>
                 <Route path="/About/Detail">
