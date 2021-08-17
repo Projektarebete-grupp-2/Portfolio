@@ -9,7 +9,6 @@ import Footer from "./footer";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { Grid, Paper, Switch } from "@material-ui/core";
 import Portfolio from "./Upcoming";
-// import {Blog} from './Blog'
 
 import WbSunnySharpIcon from "@material-ui/icons/WbSunnySharp";
 import Brightness3Icon from "@material-ui/icons/Brightness3";
@@ -30,11 +29,7 @@ function Main() {
         <Skills />
         <About />
         <Project />
-
-        {/* <Accordion data={data} openAll={true} /> */}
-        {/* <FAQList /> */}
         <Portfolio />
-
         <Footer></Footer>
       </Grid>
     </Paper>

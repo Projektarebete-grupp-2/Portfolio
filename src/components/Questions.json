@@ -1,0 +1,18 @@
+[
+{
+ "question": "What payment methods do you accept?",
+    "answer": "Bank transfer,Klarna,Card Payment. Details are at the bottom of our invoice."
+  },
+  {
+    "question": "Do you offer refunds?",
+    "answer": "We offer refunds and unlimited revisions untill you're satisfied"
+  },
+  {
+    "question": "What are your payment terms?",
+    "answer": "We ask for 50% at booking confirmation to secure your order"
+  },
+  {
+    "question": "How long do you need for set up?",
+    "answer": "It depends on how big the project is"
+  }
+]
