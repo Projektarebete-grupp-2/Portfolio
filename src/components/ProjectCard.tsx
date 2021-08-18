@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import CardContent from "@material-ui/core/CardContent";
 import CardHeader from "@material-ui/core/CardHeader";
 import Chip from "@material-ui/core/Chip";
+import { Container } from '@material-ui/core';
  
 interface Props {
  project: {
@@ -21,8 +22,9 @@ function ProjectCard({ project }: Props) {
  const Fade = require('react-reveal/Fade');
  return (
    <Fade duration={800} bottom>
-     <a className="project-card-main" href={project.url}>
-       <Card className="card-title">
+     <Container className="project-card-main">
+     <a href={project.url} style={{color: 'red'}}>
+       <Card className="card-title" >
          <CardHeader title={project.title} />
 
          <img src={project.img} alt={project.alt} style={image} />
@@ -35,6 +37,7 @@ function ProjectCard({ project }: Props) {
          </CardContent>
        </Card>
      </a>
+     </Container>
    </Fade>
  );
 }
