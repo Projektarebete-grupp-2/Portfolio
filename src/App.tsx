@@ -59,7 +59,9 @@ function App() {
   return (
     <Router>
       <ThemeProvider theme={theme}>
+
         <Grid>
+
           <div className="navbar">
             <Nav />
             <div style={themeSwitcher}>
