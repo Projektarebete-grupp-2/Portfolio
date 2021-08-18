@@ -21,3 +21,11 @@ a.social {
   transition: transform 250ms;
   display: inline-block;
 }
+
+/* PHONE */
+
+@media screen and (min-width: 375px) and (max-width: 400px) {
+  a.social {
+    margin: 1rem 1rem;
+  }
+}
