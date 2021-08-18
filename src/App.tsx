@@ -57,26 +57,26 @@ function App() {
   const ThemeContext = React.createContext(theme.palette.type);
 
   return (
-    <ThemeProvider theme={theme}>
-      <Grid container direction="row">
-        <div className="navbar">
-          <Nav />
-          <div style={themeSwitcher}>
-            <WbSunnySharpIcon
-              style={{ color: darkMode ? "grey" : "yellow" }}
-            ></WbSunnySharpIcon>
-            <Switcher
-              style={{ transition: "0.5s ease-out" }}
-              checked={darkMode}
-              color="default"
-              onChange={() => setDarkMode((prevMode) => !prevMode)}
-            ></Switcher>
-            <Brightness3Icon
-              style={{ color: darkMode ? "slateblue" : "grey" }}
-            ></Brightness3Icon>
+    <Router>
+      <ThemeProvider theme={theme}>
+        <Grid container direction="row">
+          <div className="navbar">
+            <Nav />
+            <div style={themeSwitcher}>
+              <WbSunnySharpIcon
+                style={{ color: darkMode ? "grey" : "yellow" }}
+              ></WbSunnySharpIcon>
+              <Switcher
+                style={{ transition: "0.5s ease-out" }}
+                checked={darkMode}
+                color="default"
+                onChange={() => setDarkMode((prevMode) => !prevMode)}
+              ></Switcher>
+              <Brightness3Icon
+                style={{ color: darkMode ? "slateblue" : "grey" }}
+              ></Brightness3Icon>
+            </div>
           </div>
-        </div>
-        <Router>
           <Switch>
             <Route path="/" exact component={Main}></Route>
 
@@ -104,9 +104,9 @@ function App() {
             <Route component={Work} path="/portfolio/:id" exact />
             <Route path="/faq" exact component={QuestionWrapper} />
           </Switch>
-        </Router>
-      </Grid>
-    </ThemeProvider>
+        </Grid>
+      </ThemeProvider>
+    </Router>
   );
 }
 
