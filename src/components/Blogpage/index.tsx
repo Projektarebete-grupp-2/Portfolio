@@ -97,7 +97,6 @@ const theme = useTheme();
     <ThemeProvider theme={theme}>
       <Paper>
         <div>
-          {/* header here */}
           <AppBar position="absolute" />
           <Container maxWidth="lg">
             <br />

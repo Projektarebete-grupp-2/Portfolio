@@ -6,6 +6,7 @@ import { FaInfo } from "react-icons/fa";
 import Questions from "./Questions.json"
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
+import { DEFAULT_MIN_VERSION } from 'tls';
 interface QuestionsAnswers {
   question: string;
   answer: string;
@@ -92,7 +93,7 @@ class QuestionList extends React.Component {
         {loading ? (
           <h1>loading. </h1>
         ) : (
-          <Container className="main">
+          <Grid className="main">
             <SearchBar search={this.searchQuestions} />
             {filterFaqs?.length === 0 ? (
               <div className="noQuestionFound">
@@ -109,7 +110,7 @@ class QuestionList extends React.Component {
                 </Accordion>
               ))
             )}
-          </Container>
+          </Grid>
         )}
       </>
     );

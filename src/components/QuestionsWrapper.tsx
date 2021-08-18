@@ -4,7 +4,7 @@ import QuestionList from "./QuestionList";
 function QuestionWrapper() {
 
   return (
-    <div style={{ backgroundColor: "black" }}>
+    <div style={{ backgroundColor: "black"}}>
       <QuestionList />
     </div>
   );
