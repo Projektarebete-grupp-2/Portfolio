@@ -2,6 +2,7 @@ import { Button } from "@material-ui/core";
 import React from "react";
 import styled from "styled-components";
 import ContactPage from "./contactPage";
+import ErrorBoundary from "./errorboundary";
 
 const Wrapper = styled.div`
   display: flex;
@@ -20,7 +21,9 @@ type Props = {
 
 const ModalContent: React.FC<Props> = ({ setModalOpen }) => (
   <Wrapper>
-    <ContactPage></ContactPage>
+    <ErrorBoundary errorMsg="whoopsie daisy, something went wrong with the contact form...">
+      <ContactPage></ContactPage>
+    </ErrorBoundary>
     <Button
       type="button"
       variant="outlined"

@@ -1,48 +1,51 @@
-import { AppBar, Button } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import React, { CSSProperties, useState } from "react";
-import { Link } from "react-router-dom";
+
 import Modal from "./modal";
 import ModalContent from "./modalContent";
+import { Link } from "react-scroll";
 
 const Nav: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
   return (
-              
-
-    <div style={navdiv}>
-      <Link to="/">
+    <div /* style={navdiv} */>
+      <Link to="root" spy={true} smooth={true}>
         <Button>Home</Button>
       </Link>
-      <Link to="/Team">
+      <Link to="team" spy={true} smooth={true}>
         <Button>Team</Button>
       </Link>
-      <Link to="/Skills">
+      <Link to="divWrapper" spy={true} smooth={true}>
         <Button>Skills</Button>
       </Link>
-      <Link to="/About">
+      <Link to="aboutUs" spy={true} smooth={true}>
         <Button>About</Button>
       </Link>
-      <Link to="/Blog">
-        <Button>Blog</Button>
+      <Link to="project" spy={true} smooth={true}>
+        <Button>Project</Button>
       </Link>
-
-      <Link to="/faq">
+      <Link to="portfolio" spy={true} smooth={true}>
+        <Button>Up comming</Button>
+      </Link>
+      <Link to="faq" spy={true} smooth={true}>
         <Button>FAQ</Button>
       </Link>
-
-      <Modal modalOpen={modalOpen}>
-        <ModalContent setModalOpen={setModalOpen} />
-      </Modal>
-      <Button onClick={() => setModalOpen(true)}>
-        <span>Contact us!</span>
-      </Button>
+      <Link to="root" spy={true} smooth={true}>
+        <Modal modalOpen={modalOpen}>
+          <ModalContent setModalOpen={setModalOpen} />
+        </Modal>
+        <Button onClick={() => setModalOpen(true)}>
+          <span>Contact us!</span>
+        </Button>
+      </Link>
     </div>
   );
 };
-const navdiv: CSSProperties = {
+/* const navdiv: CSSProperties = {
   display: "flex",
   flexDirection: "row",
   alignItems: "center",
-  /*  backgroundColor: '#282c34', */
-};
+  position: "fixed",
+  
+}; */
 export default Nav;

@@ -18,12 +18,7 @@ function Main() {
   return (
     <Paper>
       <Grid container direction="column">
-        <Grid
-          style={{ padding: "20px" }}
-          container
-          direction="row"
-          justify="flex-end"
-        ></Grid>
+        <Grid container direction="row" justify="flex-end"></Grid>
         <HelloWorld />
         <Team />
         <Skills />

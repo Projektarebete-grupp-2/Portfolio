@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Fragment } from "react";
+import React, { useEffect, useState, Fragment, CSSProperties } from "react";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { Button, Grid, Paper, Switch as Switcher } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -23,7 +23,6 @@ import Article from "./components/Article";
 import Portfolio from "./components/Upcoming";
 import Work from "./components/Work";
 import QuestionWrapper from "./components/QuestionsWrapper";
-
 
 function App() {
   function GetInitMode() {
@@ -59,14 +58,10 @@ function App() {
   return (
     <Router>
       <ThemeProvider theme={theme}>
-        <Paper>
-          <Grid container direction="column">
-            <Grid
-              style={{ padding: "20px" }}
-              container
-              direction="row"
-              justify="flex-end"
-            >
+        <Grid container direction="row">
+          <div style={navdiv}>
+            <Nav />
+            <div style={themeSwitcher}>
               <WbSunnySharpIcon
                 style={{ color: darkMode ? "grey" : "yellow" }}
               ></WbSunnySharpIcon>
@@ -79,46 +74,55 @@ function App() {
               <Brightness3Icon
                 style={{ color: darkMode ? "slateblue" : "grey" }}
               ></Brightness3Icon>
-            </Grid>
-            <Nav />
+            </div>
+          </div>
+          <Switch>
+            <Route path="/" exact component={Main}></Route>
 
-            <Switch>
-              <Route path="/" exact component={Main}></Route>
-
-              <Route path="/Team" exact component={Team}>
-                <Team />
-              </Route>
-              <Route path="/Skills" exact component={Skills}>
-                <Skills />
-              </Route>
-              <Route path="/About" component={About}>
-                <About></About>
-              </Route>
-              <Route path="/ContactPage" exact component={ContactPage}>
-                <ErrorBoundary errorMsg="whoopsie daisy, something went wrong with the contact form...">
-                  <ContactPage></ContactPage>
-                </ErrorBoundary>
-              </Route>
-              <Route path="/Project" exact component={Project}>
-                <Project></Project>
-              </Route>
-              <Route path="/blog" exact component={Blogpage}>
-                <ErrorBoundary errorMsg="whoopsie daisy, something went wrong with the blog page...">
-                  <Blogpage></Blogpage>
-                </ErrorBoundary>
-              </Route>
-
-              <Route path="/blog/:id" component={Article} />
-              <Route path="/contact" component={ContactPage} />
-
-              <Route component={Portfolio} path="/portfolio" exact />
-              <Route component={Work} path="/portfolio/:id" exact />
-              <Route path="/faq" exact component={QuestionWrapper} />
-            </Switch>
-          </Grid>
-        </Paper>
+            <Route path="/Team" exact component={Team}>
+              <Team />
+            </Route>
+            <Route path="/Skills" exact component={Skills}>
+              <Skills />
+            </Route>
+            <Route path="/About" component={About}>
+              <About></About>
+            </Route>
+            <Route path="/ContactPage" exact component={ContactPage}>
+              <ErrorBoundary errorMsg="whoopsie daisy, something went wrong with the contact form...">
+                <ContactPage></ContactPage>
+              </ErrorBoundary>
+            </Route>
+            <Route path="/Project" exact component={Project}>
+              <Project></Project>
+            </Route>
+            <Route path="/blog" exact component={Blogpage} />
+            <Route path="/blog/:id" component={Article} />
+            <Route path="/contact" component={ContactPage} />
+            <Route component={Portfolio} path="/portfolio" exact />
+            <Route component={Work} path="/portfolio/:id" exact />
+            <Route path="/faq" exact component={QuestionWrapper} />
+          </Switch>
+        </Grid>
       </ThemeProvider>
     </Router>
   );
 }
+const navdiv: CSSProperties = {
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  position: "fixed",
+  backgroundColor: "#282c34",
+  height: "5vh",
+  width: "100vw",
+  zIndex: 10,
+  paddingTop: "10px",
+};
+const themeSwitcher: CSSProperties = {
+  /* display: "flex",
+  flexDirection: "row",
+  justifyContent: "flex-end", */
+  /*  backgroundColor: '#282c34', */
+};
 export default App;
