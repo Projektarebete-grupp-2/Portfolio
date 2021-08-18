@@ -16,11 +16,11 @@
     box-shadow: 0 4px 8px rgba(38,38,38,0.2);
     background-color: #4a4b4c;
 }
-.project-card-main .card-title {
+ .card-title {
     font-size: 25px;
     font-weight: 500;
 }
-.project-card-main .card-desc {
+ .card-desc {
     line-height: 1.4;
     margin-top: 30px;
     display: -webkit-inline-box;
@@ -33,10 +33,10 @@
 }
 
 @media screen and (max-width: 1380px) {
-    .project-card-main .card-title {
+    .card-title {
         font-size: 22px;
     }
-    .project-card-main .card-desc {
+     .card-desc {
         font-size: 16px;
     }
 }
