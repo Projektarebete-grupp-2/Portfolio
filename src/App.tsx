@@ -79,24 +79,6 @@ function App() {
           </div>
           <Switch>
             <Route path="/" exact component={Main}></Route>
-
-            <Route path="/Team" exact component={Team}>
-              <Team />
-            </Route>
-            <Route path="/Skills" exact component={Skills}>
-              <Skills />
-            </Route>
-            <Route path="/About" component={About}>
-              <About></About>
-            </Route>
-            <Route path="/ContactPage" exact component={ContactPage}>
-              <ErrorBoundary errorMsg="whoopsie daisy, something went wrong with the contact form...">
-                <ContactPage></ContactPage>
-              </ErrorBoundary>
-            </Route>
-            <Route path="/Project" exact component={Project}>
-              <Project></Project>
-            </Route>
             <Route path="/blog" exact component={Blogpage} />
             <Route path="/blog/:id" component={Article} />
             <Route path="/contact" component={ContactPage} />
@@ -111,9 +93,9 @@ function App() {
 }
 
 const themeSwitcher: CSSProperties = {
-  /* display: "flex",
+  /*  display: "flex",
   flexDirection: "row",
-  justifyContent: "flex-end", */
-  /*  backgroundColor: '#282c34', */
+  justifyContent: "flex-end",
+  backgroundColor: "green", */
 };
 export default App;

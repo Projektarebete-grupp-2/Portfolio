@@ -14,6 +14,8 @@ import WbSunnySharpIcon from "@material-ui/icons/WbSunnySharp";
 import Brightness3Icon from "@material-ui/icons/Brightness3";
 import ErrorBoundary from "./errorboundary";
 import { makeStyles } from "@material-ui/core/styles";
+import Blogpage from "./Blogpage";
+import QuestionWrapper from "./QuestionsWrapper";
 
 const useStyles = makeStyles({
   spacingDiv: {
@@ -40,13 +42,10 @@ function Main() {
         <ErrorBoundary errorMsg="Oops something went wrong">
           <Portfolio />
         </ErrorBoundary>
+        {/* <Blogpage />
+        <QuestionWrapper /> */}
+
         <Footer></Footer>
-        {/* 
-        
-        
-      
-         */}
-        {/*  */}
       </Grid>
     </Paper>
   );
