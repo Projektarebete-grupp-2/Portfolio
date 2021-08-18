@@ -1,3 +1,4 @@
+import "./style/app.css";
 import React, { useEffect, useState, Fragment, CSSProperties } from "react";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { Button, Grid, Paper, Switch as Switcher } from "@material-ui/core";
@@ -56,26 +57,26 @@ function App() {
   const ThemeContext = React.createContext(theme.palette.type);
 
   return (
-    <Router>
-      <ThemeProvider theme={theme}>
-        <Grid container direction="row">
-          <div style={navdiv}>
-            <Nav />
-            <div style={themeSwitcher}>
-              <WbSunnySharpIcon
-                style={{ color: darkMode ? "grey" : "yellow" }}
-              ></WbSunnySharpIcon>
-              <Switcher
-                style={{ transition: "0.5s ease-out" }}
-                checked={darkMode}
-                color="default"
-                onChange={() => setDarkMode((prevMode) => !prevMode)}
-              ></Switcher>
-              <Brightness3Icon
-                style={{ color: darkMode ? "slateblue" : "grey" }}
-              ></Brightness3Icon>
-            </div>
+    <ThemeProvider theme={theme}>
+      <Grid container direction="row">
+        <div className="navbar">
+          <Nav />
+          <div style={themeSwitcher}>
+            <WbSunnySharpIcon
+              style={{ color: darkMode ? "grey" : "yellow" }}
+            ></WbSunnySharpIcon>
+            <Switcher
+              style={{ transition: "0.5s ease-out" }}
+              checked={darkMode}
+              color="default"
+              onChange={() => setDarkMode((prevMode) => !prevMode)}
+            ></Switcher>
+            <Brightness3Icon
+              style={{ color: darkMode ? "slateblue" : "grey" }}
+            ></Brightness3Icon>
           </div>
+        </div>
+        <Router>
           <Switch>
             <Route path="/" exact component={Main}></Route>
 
@@ -103,22 +104,12 @@ function App() {
             <Route component={Work} path="/portfolio/:id" exact />
             <Route path="/faq" exact component={QuestionWrapper} />
           </Switch>
-        </Grid>
-      </ThemeProvider>
-    </Router>
+        </Router>
+      </Grid>
+    </ThemeProvider>
   );
 }
-const navdiv: CSSProperties = {
-  display: "flex",
-  flexDirection: "row",
-  justifyContent: "space-between",
-  position: "fixed",
-  backgroundColor: "#282c34",
-  height: "5vh",
-  width: "100vw",
-  zIndex: 10,
-  paddingTop: "10px",
-};
+
 const themeSwitcher: CSSProperties = {
   /* display: "flex",
   flexDirection: "row",

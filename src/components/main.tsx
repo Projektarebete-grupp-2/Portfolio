@@ -13,12 +13,25 @@ import Portfolio from "./Upcoming";
 import WbSunnySharpIcon from "@material-ui/icons/WbSunnySharp";
 import Brightness3Icon from "@material-ui/icons/Brightness3";
 import ErrorBoundary from "./errorboundary";
+import { makeStyles } from "@material-ui/core/styles";
 
+const useStyles = makeStyles({
+  spacingDiv: {
+    backgroundColor: "green",
+    marginTop: "5em",
+  },
+});
 function Main() {
+  const classes = useStyles();
   return (
     <Paper>
       <Grid container direction="column">
-        <Grid container direction="row" justify="flex-end"></Grid>
+        <Grid
+          className={classes.spacingDiv}
+          container
+          direction="row"
+          justify="flex-end"
+        ></Grid>
         <HelloWorld />
         <Team />
         <Skills />
@@ -38,4 +51,5 @@ function Main() {
     </Paper>
   );
 }
+
 export default Main;
