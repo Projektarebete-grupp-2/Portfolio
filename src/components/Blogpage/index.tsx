@@ -1,4 +1,4 @@
-import './style.css'
+import "./style.css";
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
@@ -16,12 +16,14 @@ import { api } from "../../api";
 import { Link } from "react-router-dom";
 import moment from "moment";
 import AppBar from "@material-ui/core/AppBar";
-import { WPPostEmbedded,WPPost } from "../../data/wordpressPostTypes";
+import { WPPostEmbedded, WPPost } from "../../data/wordpressPostTypes";
 import { Paper, ThemeProvider, useTheme } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
-
-
+   spacingDiv: {
+    backgroundColor: "green",
+    marginTop: "6em",
+  },
   blogsContainer: {
     paddingTop: theme.spacing(3),
   },
@@ -55,7 +57,7 @@ interface Post {
   excerpt: string;
   date: string;
   _embedded: WPPostEmbedded;
-  categories: WPPost
+  categories: WPPost;
 }
 
 interface PostsProps {
@@ -71,10 +73,8 @@ interface PostsProps {
   categories: WPPost;
 }
 
-
 function Blogpage() {
-  
-const theme = useTheme();
+  const theme = useTheme();
   const classes = useStyles();
   const [posts, setPosts] = useState<Post[]>([]);
 
@@ -86,7 +86,7 @@ const theme = useTheme();
         excerpt: post.excerpt.rendered,
         date: post.date,
         _embedded: post._embedded,
-        categories: post.categories
+        categories: post.categories,
       }));
 
       setPosts(newPosts);
@@ -97,11 +97,16 @@ const theme = useTheme();
     <ThemeProvider theme={theme}>
       <Paper>
         <div>
-          {/* header here */}
-          <AppBar position="absolute" />
-          <Container maxWidth="lg">
+          <Grid>
             <br />
-            <Grid container spacing={3}>
+
+            <Grid
+              className={classes.spacingDiv}
+              container
+              direction="row"
+              justify="flex-end"
+            ></Grid>
+            <Grid container spacing={3} style={{ justifyContent: "center" }}>
               {posts.map((post) => (
                 <Grid item xs={12} sm={6} md={4} key={post.id}>
                   <Card className={classes.card}>
@@ -164,12 +169,11 @@ const theme = useTheme();
                 </Grid>
               ))}
             </Grid>
-          </Container>
+          </Grid>
         </div>
       </Paper>
     </ThemeProvider>
   );
-   
 }
 
 export default Blogpage;

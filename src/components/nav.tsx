@@ -4,6 +4,7 @@ import React, { CSSProperties, useState } from "react";
 import Modal from "./modal";
 import ModalContent from "./modalContent";
 import { Link } from "react-scroll";
+import { Link as ReactLinks } from "react-router-dom";
 
 const Nav: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -27,9 +28,12 @@ const Nav: React.FC = () => {
       <Link to="portfolio" spy={true} smooth={true}>
         <Button>Up comming</Button>
       </Link>
-      <Link to="faq" spy={true} smooth={true}>
+      <ReactLinks to="/blog">
+        <Button>Blog</Button>
+      </ReactLinks>
+      <ReactLinks to="/faq">
         <Button>FAQ</Button>
-      </Link>
+      </ReactLinks>
       <Link to="root" spy={true} smooth={true}>
         <Modal modalOpen={modalOpen}>
           <ModalContent setModalOpen={setModalOpen} />
