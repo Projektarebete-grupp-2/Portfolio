@@ -3,9 +3,8 @@ import React from "react";
 import Accordion from "./Accordion";
 import SearchBar from "./SearchBar";
 import { FaInfo } from "react-icons/fa";
-import Questions from "./Questions.json"
+import Questions from "../data/Questions.json"
 import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
 interface QuestionsAnswers {
   question: string;
   answer: string;
@@ -99,15 +98,19 @@ class QuestionList extends React.Component {
                 <div className="icon">
                   <FaInfo></FaInfo>
                 </div>
-                <span>Not found your question, Sorry</span>
+                <span>Not found!! sorry</span>
               </div>
             ) : (
-              filterFaqs?.map((faq: QuestionsAnswers, index: number) => (
-                <Accordion key={index}>
-                  <Accordion.Header>{faq.question}</Accordion.Header>
-                  <Accordion.Answer>{faq.answer}</Accordion.Answer>
-                </Accordion>
-              ))
+              filterFaqs?.map(
+                (questionsArray: QuestionsAnswers, index: number) => (
+                  <Accordion key={index}>
+                    <Accordion.Header>
+                      {questionsArray.question}
+                    </Accordion.Header>
+                    <Accordion.Answer>{questionsArray.answer}</Accordion.Answer>
+                  </Accordion>
+                )
+              )
             )}
           </Container>
         )}
