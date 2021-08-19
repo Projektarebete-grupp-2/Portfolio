@@ -58,7 +58,7 @@ const theme = useTheme();
             <Grid className="container">
               <div className="hero">
                 <h1 className="title">
-                  <b>Upcming Projects</b>
+                  <b>Upcoming Projects</b>
                 </h1>
               </div>
               <div className="wrapper">

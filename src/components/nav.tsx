@@ -29,7 +29,7 @@ const Nav: React.FC = () => {
           <Button>Project</Button>
         </Link>
         <Link to="portfolio" spy={true} smooth={true}>
-          <Button>Up comming</Button>
+          <Button>Upcoming</Button>
         </Link>
         <ReactLinks to="/blog">
           <Button>Blog</Button>
