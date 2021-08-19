@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useReducer } from "react";
 import "./AccordionStyle.css";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import {QuestionAnimation} from "./AccordionDivStyle";
+import {QuestionAnimation} from "../style/AccordionDivStyle";
 import useAccordion from "../hooks/useAccordion";
 import { Provider } from "../hooks//AccordionContext";
 
