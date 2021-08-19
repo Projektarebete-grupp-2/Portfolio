@@ -6,7 +6,6 @@ import Button from "@material-ui/core/Button";
 
 interface Props {}
 export default function ContactPage(props: Props) {
-  /* Kanske göra en klass utav detta? */
   function sendEmail(e: any) {
     e.preventDefault();
 
@@ -32,19 +31,19 @@ export default function ContactPage(props: Props) {
   }
 
   return (
-    <div style={formDiv}>
-      <form onSubmit={sendEmail} style={mainForm}>
+    <div>
+      <form onSubmit={sendEmail}>
         <div>
-          <textarea style={fieldDiv} placeholder="Subject" name="subject" />
+          <textarea placeholder="Subject" name="subject" />
         </div>
         <div>
-          <textarea style={fieldDiv} placeholder="Name" name="name" />
+          <textarea placeholder="Name" name="name" />
         </div>
         <div>
-          <textarea style={fieldDiv} placeholder="Email" name="email" />
+          <textarea placeholder="Email" name="email" />
         </div>
         <div>
-          <textarea style={fieldMessage} placeholder="Message" name="message" />
+          <textarea placeholder="Message" name="message" />
         </div>
         <div>
           <Button variant="outlined" color="primary" type="submit">
@@ -55,29 +54,3 @@ export default function ContactPage(props: Props) {
     </div>
   );
 }
-
-const formDiv: CSSProperties = {
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  /*  backgroundColor: '#282c34', */
-};
-const mainForm: CSSProperties = {
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-  width: "40vw",
-  height: "60vh",
-};
-const fieldDiv: CSSProperties = {
-  height: "10vh",
-  width: "20vw",
-  resize: "none",
-  borderRadius: "5px",
-};
-const fieldMessage: CSSProperties = {
-  height: "10vh",
-  width: "20vw",
-  borderRadius: "5px",
-};
