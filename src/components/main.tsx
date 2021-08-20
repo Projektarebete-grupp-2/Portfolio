@@ -4,6 +4,7 @@ import Skills from "./Skills";
 import Team from "./Team";
 import About from "./About";
 import Project from "./Project";
+import Title from "./LinnTest";
 
 import Footer from "./footer";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
@@ -44,6 +45,7 @@ function Main() {
         </ErrorBoundary>
         {/* <Blogpage />
         <QuestionWrapper /> */}
+<Title title="Det här är test komponenten, gjord" subtitle="Gjord av Linn" ></Title>
 
         <Footer></Footer>
       </Grid>
