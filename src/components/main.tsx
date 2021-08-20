@@ -17,6 +17,7 @@ import ErrorBoundary from "./errorboundary";
 import { makeStyles } from "@material-ui/core/styles";
 import Blogpage from "./Blogpage";
 import QuestionWrapper from "./QuestionsWrapper";
+import ContactPage from "./contactPage";
 
 const useStyles = makeStyles({
   spacingDiv: {
@@ -45,7 +46,11 @@ function Main() {
         </ErrorBoundary>
         {/* <Blogpage />
         <QuestionWrapper /> */}
-<Title title="Det här är test komponenten, gjord" subtitle="Gjord av Linn" ></Title>
+        <ContactPage />
+        <Title
+          title="Det här är test komponenten, gjord"
+          subtitle="Gjord av Linn"
+        ></Title>
 
         <Footer></Footer>
       </Grid>
