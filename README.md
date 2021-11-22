@@ -9,6 +9,5 @@ För att starta projektet så måste man först öppna konsollen och sen skriva 
 ## Länk till projektet på GitHub
 https://github.com/Projektarebete-grupp-2/Portfolio
 
-// Jag har skapat min första komponent som jag ska fortsätta anpassa efter projektet och därefter göra resterande komponenter vid kompletteringen. 
-Vänliga hälsningar, Linn 
+// Jag har nu skapat fem komponenter varav två är statefulla. Jag använder även modalen samt error boundary. /Linn 
 
