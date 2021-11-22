@@ -6,7 +6,7 @@ interface TitleProps {
   subtitle: string;
 }
 
-class Title extends Component<TitleProps> {
+class Linns extends Component<TitleProps> {
   render() {
     const { title, subtitle, children } = this.props;
     return (
@@ -19,4 +19,4 @@ class Title extends Component<TitleProps> {
   }
 }
 
-export default Title;
+export default Linns;

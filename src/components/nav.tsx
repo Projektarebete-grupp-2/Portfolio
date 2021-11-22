@@ -19,6 +19,15 @@ const Nav: React.FC = () => {
         <Link to="team" spy={true} smooth={true}>
           <Button>Team</Button>
         </Link>
+        <Link to="alessa" spy={true} smooth={true}>
+          <Button>Linn</Button>
+        </Link>
+        <Link to="team" spy={true} smooth={true}>
+          <Button>Shahin</Button>
+        </Link>
+        <Link to="team" spy={true} smooth={true}>
+          <Button>Anton</Button>
+        </Link>
         <Link to="divWrapper" spy={true} smooth={true}>
           <Button>Skills</Button>
         </Link>
