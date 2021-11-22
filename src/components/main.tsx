@@ -61,10 +61,8 @@ function Main() {
         <Clock />
         <ErrorBoundary errorMsg="Something went wrong"> 
           <MyModal />
-        </ErrorBoundary>
-        <ErrorBoundary errorMsg="Something went wrong"> 
+        </ErrorBoundary> 
         <LinnState /> 
-        </ErrorBoundary>
         <About />
         <Project />
         <ErrorBoundary errorMsg="Oops something went wrong">
