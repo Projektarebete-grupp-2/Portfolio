@@ -4,7 +4,15 @@ import Skills from "./Skills";
 import Team from "./Team";
 import About from "./About";
 import Project from "./Project";
-import Title from "./LinnTest";
+import LinnState from "./LinnState";
+import Clock from "./LinnStateSecond";
+import Linns from "./LinnComponent";
+import LinnAlessa from "./LinnAlessa";
+import MyModal from "./LinnModal";
+
+
+
+
 
 import Footer from "./footer";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
@@ -18,6 +26,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import Blogpage from "./Blogpage";
 import QuestionWrapper from "./QuestionsWrapper";
 import ContactPage from "./contactPage";
+
+
+
 
 const useStyles = makeStyles({
   spacingDiv: {
@@ -39,6 +50,21 @@ function Main() {
         <HelloWorld />
         <Team />
         <Skills />
+        <LinnAlessa
+          title="Linn Alessandra"
+          subtitle="Get to know me and check out some fun code examples!"
+        ></LinnAlessa>
+         <Linns
+          title="About me"
+          subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        ></Linns>
+        <Clock />
+        <ErrorBoundary errorMsg="Something went wrong"> 
+          <MyModal />
+        </ErrorBoundary>
+        <ErrorBoundary errorMsg="Something went wrong"> 
+        <LinnState /> 
+        </ErrorBoundary>
         <About />
         <Project />
         <ErrorBoundary errorMsg="Oops something went wrong">
@@ -47,15 +73,19 @@ function Main() {
         {/* <Blogpage />
         <QuestionWrapper /> */}
         <ContactPage />
-        <Title
-          title="Det här är test komponenten, gjord"
-          subtitle="Gjord av Linn"
-        ></Title>
+
+
+  
+
+        
 
         <Footer></Footer>
       </Grid>
     </Paper>
   );
+  
 }
+
+
 
 export default Main;
